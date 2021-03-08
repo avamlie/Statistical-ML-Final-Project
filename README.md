@@ -16,3 +16,7 @@ While there have been many methods developed for stock price prediction, none ex
 ## Overview of Methods
 
 The State Frequency Memory (SFM) recurrent network attempts to extract and leverage non-stationary trading patterns of multiple frequencies. Like  LSTM, SFM models the hidden states underlying a time series with a sequence of memory cells. However, the memory cells in the SFM consist of state components for multiple frequencies, each of which the authors call a *state-frequency component*. The following figure shows the block diagrams corresponding to RNN, LSTM, and SFM. 
+
+![block diagrams](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/SFM%20Comparison.PNG?raw=true)
+
+When Recurrent Neural Networks (RNN) are trained with Back-Propagation Through Time (BPTT), they generally suffer from vanishing gradients, making them unable to handle long-term dependency in a time series. The LSTM was proposed to address this problem by using additional gating units to maintain the long-term memory of the trading patterns from the historical prices.
