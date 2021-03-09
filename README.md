@@ -26,4 +26,4 @@ When Recurrent Neural Networks (RNN) are trained with Back-Propagation Through T
 ### The State Frequency Memory (SFM)
 
 Building on the LSTM and inspired by the Discrete Fourier Transform (DFT), the authors propose the State Frequency Memory (SFM) recurrent network to enable the discovery and modeling of latent trading patterns across multiple frequency bands underlying the fluctuation of stock prices. The SFM models the dynamics of an input time series 
-![equation](https://latex.codecogs.com/gif.latex?%5C%7B%20x_t%20%7C%20t%20%3D%201%2C%20...%2C%20T%20%5C%7D)  
+![equation](https://latex.codecogs.com/gif.latex?%5C%7B%20x_t%20%7C%20t%20%3D%201%2C%20...%2C%20T%20%5C%7D) with a sequence of memory cells. The memory states of SFMs are decomposed into a set of K discrete frequencies
