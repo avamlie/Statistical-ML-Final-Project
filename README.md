@@ -7,6 +7,8 @@ Liheng Zhang, Charu Aggarwal, Guo-Jun Qi, Stock Price Prediction via Discovering
 *Proceedings of ACM SIGKDD Conference on Knowledge Discovery and Data Mining* (KDD 2017), Halifax, Nova Scotia,
 Canada, August 13-17, 2017.
 
+Github page corresponding to paper: https://github.com/z331565360/State-Frequency-Memory-stock-prediction
+
 ## Introduction
 
 One of the goals of stock investors is to discover latent trading patterns in stock market to forecast future price trends and maximize profits. However, the prediction of stock prices using time series is a very challenging task, since they are affected by uncertain political-economic factors in the real world and are also non-stationary and non-linear. In addition, predicting stock prices in short or long-term time ranges relies on discovering different trading patterns in the security exchange market, ranging from low to high-frequency trading. Thus, explicitly discovering and separating various frequencies of latent trading patterns should play a crucial role in making price predictions for different ranges of time periods. 
@@ -26,4 +28,5 @@ When Recurrent Neural Networks (RNN) are trained with Back-Propagation Through T
 ### The State Frequency Memory (SFM)
 
 Building on the LSTM and inspired by the Discrete Fourier Transform (DFT), the authors propose the State Frequency Memory (SFM) recurrent network to enable the discovery and modeling of latent trading patterns across multiple frequency bands underlying the fluctuation of stock prices. The SFM models the dynamics of an input time series 
-![equation](https://latex.codecogs.com/gif.latex?%5C%7B%20x_t%20%7C%20t%20%3D%201%2C%20...%2C%20T%20%5C%7D) with a sequence of memory cells. The memory states of SFMs are decomposed into a set of K discrete frequencies
+![equation](https://latex.codecogs.com/gif.latex?%5C%7B%20x_t%20%7C%20t%20%3D%201%2C%20...%2C%20T%20%5C%7D) with a sequence of memory cells. The memory states of SFMs are decomposed into a set of K evenly-spaced discrete frequencies. This constructs a joint decomposition of states and frequencies to capture the temporal context of the input time series. The memory states of the SFM is represented as a matrix 
+![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7Bs%7D_t) at time t, with rows and columns corresponding to D states and K frequencies. 
