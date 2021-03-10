@@ -37,3 +37,6 @@ The memory gating architecture is used to balance the short and long-term depend
 Since the SFM is a variant of recurrent neural networks, it can also be trained using the the BPTT algorithm. The SFM recurrent network keeps the gating architecture of the LSTM, so it retains the ability to capture the long term dependency of time series. Furthermore, the specialized complex-valued memory states can model multiple patterns with different frequencies. For short term prediction, more high-frequency components are needed to capture the high volatility. 
 
 ### Price Prediction using the SFM
+
+Since both the SFM and the LSTM are variants of recurrent neural networks, they can be used to predict stock prices as shown in the following diagram: 
+
