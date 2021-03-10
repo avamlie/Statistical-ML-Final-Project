@@ -48,7 +48,6 @@ The RNN cell in the middle can be either a LSTM cell or a SFM cell. The LSTM-bas
 ![](https://latex.codecogs.com/gif.latex?h_t) from the RNN variant is used for price prediction through a matrix transformation. 
 
 ## Running Code for SFM Recurrent Network Model
-Code replicated from https://github.com/z331565360/State-Frequency-Memory-stock-prediction?fbclid=IwAR1MQLDmjQC8qLyy7ueP27EqEqEa9khiKsdN_myHs4DBWTNJ54Zk__mEb6o
 ### Setup
 In order to run the model, we must ensure that Python 2.7, Keras 1.0.1, and Theano 0.9 are installed. Here is an example of how to install the proper version:
 `pip install keras==1.0.1`
@@ -87,5 +86,5 @@ In the test file, we run `python test.py --step=1`
 The number step we use indicates the n-step prediction model we want to use. The 1, 3, and 5 step predictions are provided in the source code.
 
 Additionally, we can visualize the data by running the command `python test --step=1 --visualization=true`, which produces several graphs:
-
+![visualization] (https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/visualization.png)
 
