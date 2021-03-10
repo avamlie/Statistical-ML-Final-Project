@@ -87,8 +87,11 @@ python build_data.py
 In the test folder, we run `python test.py --step=1`
 The number step we use indicates the n-step prediction model we want to use. The 1, 3, and 5 step predictions are provided in the source code.
 
+<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/test_output.png" width="600" height="200">
+
 Additionally, we can visualize the data by running the command `python test --step=1 --visualization=true`, which produces several graphs:
-![visualization](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/visualization.png)
+
+<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/visualization.png" width="400" height="300">
 
 These visualizations show the similarity between the true, given data and the prediction model.
 
