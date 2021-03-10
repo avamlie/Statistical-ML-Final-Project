@@ -82,9 +82,15 @@ cd dataset
 python build_data.py
 ```
 ### Testing with Pre-trained Model
-In the test file, we run `python test.py --step=1`
+In the test folder, we run `python test.py --step=1`
 The number step we use indicates the n-step prediction model we want to use. The 1, 3, and 5 step predictions are provided in the source code.
 
 Additionally, we can visualize the data by running the command `python test --step=1 --visualization=true`, which produces several graphs:
-![visualization] (https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/visualization.png)
+![visualization](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/visualization.png)
 
+These visualizations show the similarity between the true, given data and the prediction model.
+
+### Training
+In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_dim=10 --niter=4000 --learning_rate=0.01`
+
+![training output](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/training.png)
