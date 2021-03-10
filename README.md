@@ -51,6 +51,8 @@ The RNN cell in the middle can be either a LSTM cell or a SFM cell. The LSTM-bas
 ### Setup
 In order to run the model, we must ensure that Python 2.7, Keras 1.0.1, and Theano 0.9 are installed. Here is an example of how to install the proper version:
 `pip install keras==1.0.1`
+
+Additionally, we must clone the repository: `git clone https://github.com/z331565360/State-Frequency-Memory-stock-prediction.git`
 ### Preparing Data
 The build_data.py file prepares the provided data by reading each of the CSV (in this case) files and grabbing the data from the proper column. In the Github provided above, the authors used Yahoo! Finance stock price data, where "Open" was the header of the column data needed for the prediction. In the following code, the data from this column is transposed into an array that will be later used to train and test the model.
 
@@ -94,3 +96,5 @@ These visualizations show the similarity between the true, given data and the pr
 In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_dim=10 --niter=4000 --learning_rate=0.01`
 
 ![training output](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/training.png)
+
+The epochs shown in this screenshot represent the iterations of training. 
