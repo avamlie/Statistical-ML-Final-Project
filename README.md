@@ -47,3 +47,45 @@ The RNN cell in the middle can be either a LSTM cell or a SFM cell. The LSTM-bas
 ![](https://latex.codecogs.com/gif.latex?%5Chat%20p_%7Bt%20&plus;%20n%7D%20%3D%20f%28p_t%2C%20p_%7Bt-1%7D%2C%20...%2C%20p_1%29), where f denotes the model mapping the historical prices to the price n-steps ahead. Since the scales of prices varies for different stocks, we normalize the prices of each stock to fall within [-1,1]. We adapt a RNN variant, the SFM or the LSTM, as such a mapping f for n-step prediction. The hidden vector 
 ![](https://latex.codecogs.com/gif.latex?h_t) from the RNN variant is used for price prediction through a matrix transformation. 
 
+## Running Code for SFM Recurrent Network Model
+Code replicated from https://github.com/z331565360/State-Frequency-Memory-stock-prediction?fbclid=IwAR1MQLDmjQC8qLyy7ueP27EqEqEa9khiKsdN_myHs4DBWTNJ54Zk__mEb6o
+### Setup
+In order to run the model, we must ensure that Python 2.7, Keras 1.0.1, and Theano 0.9 are installed. Here is an example of how to install the proper version:
+`pip install keras==1.0.1`
+### Preparing Data
+The build_data.py file prepares the provided data by reading each of the CSV (in this case) files and grabbing the data from the proper column. In the Github provided above, the authors used Yahoo! Finance stock price data, where "Open" was the header of the column data needed for the prediction. In the following code, the data from this column is transposed into an array that will be later used to train and test the model.
+
+```
+all_data = np.zeros((len(filenames),2518),dtype = np.float32)
+for i in range(len(filenames)):
+  filename = filenames[i]
+  print(i)
+  print(filename)
+  
+  data=pd.read_csv(directory+'/'+filename)
+  vars = ['Open']
+  data = data[vars]
+  data = np.array(data)
+  data = np.transpose(data)
+  data = data[0]
+  data = data[::-1]
+  
+  all_data[i] = data
+
+print(all_data.shape)  
+np.save('data',all_data)
+```
+The 2518 from the first line of code represents the length of each CSV file from their data. If we want to replicate this with new data, we will have to preprocess the files to all be of the same length. 
+
+In Linux, we run the following commands:
+```
+cd dataset
+python build_data.py
+```
+### Testing with Pre-trained Model
+In the test file, we run `python test.py --step=1`
+The number step we use indicates the n-step prediction model we want to use. The 1, 3, and 5 step predictions are provided in the source code.
+
+Additionally, we can visualize the data by running the command `python test --step=1 --visualization=true`, which produces several graphs:
+
+
