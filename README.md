@@ -44,5 +44,6 @@ Since both the SFM and the LSTM are variants of recurrent neural networks, they 
 
 The RNN cell in the middle can be either a LSTM cell or a SFM cell. The LSTM-based price prediction model is considered to be the baseline which will be used to compare against the proposed SFM model. For a time series of trading prices 
 ![](https://latex.codecogs.com/gif.latex?%5C%7Bp_t%20%7C%20t%20%3D%201%2C%20...%2C%20T%20%5C%7D) of a stock, we wish to make an n-step prediction for time t+n based on prices up to time t. The prediction can be viewed as a function 
-![](https://latex.codecogs.com/gif.latex?%5Chat%20p_%7Bt%20&plus;%20n%7D%20%3D%20f%28p_t%2C%20p_%7Bt-1%7D%2C%20...%2C%20p_1%29), where f denotes the model mapping the historical prices to the price n-steps ahead. 
+![](https://latex.codecogs.com/gif.latex?%5Chat%20p_%7Bt%20&plus;%20n%7D%20%3D%20f%28p_t%2C%20p_%7Bt-1%7D%2C%20...%2C%20p_1%29), where f denotes the model mapping the historical prices to the price n-steps ahead. Since the scales of prices varies for different stocks, we normalize the prices of each stock to fall within [-1,1]. We adapt a RNN variant, the SFM or the LSTM, as such a mapping f for n-step prediction. The hidden vector 
+![](https://latex.codecogs.com/gif.latex?h_t) from the RNN variant is used for price prediction through a matrix transformation. 
 
