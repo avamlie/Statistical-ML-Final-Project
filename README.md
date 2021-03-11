@@ -98,6 +98,9 @@ These visualizations show the similarity between the true, given data and the pr
 ### Training
 In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_dim=10 --niter=4000 --learning_rate=0.01`
 
-![training output](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/training.png)
+<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/training.png" width="400" height="700">
 
 The epochs shown in this screenshot represent the iterations of training. 
+
+## Historical Prices Data
+
