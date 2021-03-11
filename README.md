@@ -102,5 +102,42 @@ In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_
 
 The epochs shown in this screenshot represent the iterations of training. 
 
-## Historical Prices Data
+## Historical Prices and New Articles Data
+In order to run the model with the provided Historical Stock Prices data and the News Articles data, we had to perform some data preprocessing. 
 
+Since the data from the original repository had been written for CSVs, the historical prices data fit fairly well with the build_data code. However, the original CSV files were all the same length, so we needed to split the CSVs into files of the same length (preferably 2518, which was the length of the original files). To do this, we used the following split function (after making some alterations):
+
+```
+def split(filehandler, delimiter=',', row_limit=1000,
+          output_name_template='output_%s.csv', output_path='.', keep_headers=True):
+    import csv
+    reader = csv.reader(filehandler, delimiter=delimiter)
+    current_piece = 1
+    current_out_path = os.path.join(
+        output_path,
+        output_name_template % current_piece
+    )
+    current_out_writer = csv.writer(open(current_out_path, 'w'), delimiter=delimiter)
+    current_limit = row_limit
+    if keep_headers:
+        headers = reader.next()
+        current_out_writer.writerow(headers)
+    for i, row in enumerate(reader):
+        if i + 1 > current_limit:
+            current_piece += 1
+            current_limit = row_limit * current_piece
+            current_out_path = os.path.join(
+                output_path,
+                output_name_template % current_piece
+            )
+            current_out_writer = csv.writer(open(current_out_path, 'w'), delimiter=delimiter)
+            if keep_headers:
+                current_out_writer.writerow(headers)
+        current_out_writer.writerow(row)
+```
+Source: https://gist.github.com/jrivero/1085501
+
+Additionally, we had to change some of the code in build_data.py to account for the difference in column names. In the original data, values from the 'Open' columns were used, but in the historical prices data, the column name was different. Once we solved these smaller issues, the model was able to train and test the prediction.
+
+Since the news articles data was originally in json format, we had to use a json -> csv converter: https://json-csv.com/
+After converting the data, we followed the same steps as above and ran the model.
