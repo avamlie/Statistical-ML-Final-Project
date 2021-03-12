@@ -113,7 +113,7 @@ Visualization for AAPL data.
 These visualizations show the similarity between the true, given data and the prediction model.
 
 ### Training
-In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_dim=10 --niter=4000 --learning_rate=0.01`
+In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_dim=10 --niter=4000 --learning_rate=0.01`, where `step` refers to the n-step prediction, `hidden_dim` and `freq_dim` refer to the dimensions, and `niter` (num iterations) and `learning_rate` correspond to the specific training parameters.
 
 <img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/training-final.png" width="600" height="400">
 
