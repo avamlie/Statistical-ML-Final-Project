@@ -1,7 +1,7 @@
 # Statistical Machine Learning Final Project
 ### Annika Amlie and Robert Peng
 
-Youtube video presentation: https://youtu.be/hGWgIiyeqfI
+YouTube video presentation: https://youtu.be/hGWgIiyeqfI
 
 ## Reference Paper
 
