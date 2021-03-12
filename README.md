@@ -59,7 +59,9 @@ The datasets corresponding to the paper can be [found here](https://github.com/z
 
 When the authors compared the SFM method with both autoregressive (AR) models and LSTM, they found that the SFM outperforms both the AR and the LSTM models in terms of average square error for 1-step, 3-step and 5-step prediction:
 
+![Model Comparison](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/model_comparison.PNG?raw=true)
 
+As seen in the table above, the performance of each of the models becomes worse as the prediction step increases, as expected, but the SFM performed the best for all prediction steps. Since LSTM and SFM are trained with the same procedure (the RMSprop optimizer with a fixed learning rate of 0.01), their performance can be directly compared, and we can see that the SFM seems to have a more precise prediction than the LSTM, which only models internal dependencies. The better performance of the SFM is likely due to the fact that SFM filters out irrelevant frequency components and retains relevant components to better predict future trend, preventing states from dominating price predictions by trapping the model into local patterns of price changes.
 
 ## Running Code for SFM Recurrent Network Model
 ### Setup
