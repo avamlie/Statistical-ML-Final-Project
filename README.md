@@ -57,7 +57,7 @@ The datasets corresponding to the paper can be [found here](https://github.com/z
 
 ### Results of Experiments
 
-When the authors compared the SFM method with both autoregressive (AR) models and LSTM, they found that the SFM outperforms both the AR and the LSTM models in terms of average square error for 1-step, 3-step and 5-step prediction:
+When the authors compared the SFM method with both autoregressive (AR) models and LSTM, they found that the SFM outperforms both the AR and the LSTM models in terms of average square error for 1-step, 3-step and 5-step predictions:
 
 ![Model Comparison](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/model_comparison.PNG?raw=true)
 
