@@ -117,7 +117,7 @@ In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_
 
 <img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/training-final.png" width="600" height="400">
 
-The epochs shown in this screenshot represent the iterations of training. 
+The epochs shown in this screenshot represent the iterations of training. The output also includes training error, value error, training duration, best iteration and smallest error. These parameters can be altered depending on the desired accuracy of the model.
 
 ## Historical Prices and New Articles Data
 In order to run the model with the provided Historical Stock Prices data and the News Articles data, we had to perform some data preprocessing. 
