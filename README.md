@@ -70,6 +70,8 @@ As seen in the table above, the performance of each of the models becomes worse 
 In order to run the model, we must ensure that Python 2.7, Keras 1.0.1, and Theano 0.9 are installed. Here is an example of how to install the proper version:
 `pip install keras==1.0.1`
 
+**Note:** It is very important that these specific versions are used! Otherwise, you will run into an error when you attempt to run the code!
+
 Additionally, we must clone the repository: `git clone https://github.com/z331565360/State-Frequency-Memory-stock-prediction.git`
 ### Preparing Data
 The build_data.py file prepares the provided data by reading each of the CSV (in this case) files and grabbing the data from the proper column. In the Github provided above, the authors used Yahoo! Finance stock price data, where "Open" was the header of the column data needed for the prediction. In the following code, the data from this column is transposed into an array that will be later used to train and test the model.
