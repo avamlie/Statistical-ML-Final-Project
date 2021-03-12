@@ -23,7 +23,7 @@ While there have been many methods developed for stock price prediction, none ex
 
 The State Frequency Memory (SFM) recurrent network attempts to extract and leverage non-stationary trading patterns of multiple frequencies. Like  LSTM, SFM models the hidden states underlying a time series with a sequence of memory cells. However, the memory cells in the SFM consist of state components for multiple frequencies, each of which the authors call a *state-frequency component*. The following figure shows the block diagrams corresponding to RNN, LSTM, and SFM, giving an overview of the three methods:
 
-![block diagrams](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/SFM%20Comparison.PNG?raw=true)
+![block diagrams](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/SFM%20Comparison.PNG?raw=true)
 
 When Recurrent Neural Networks (RNN) are trained with Back-Propagation Through Time (BPTT), they generally suffer from vanishing gradients, making them unable to handle long-term dependency in a time series. The LSTM was proposed to address this problem by using additional gating units to maintain the long-term memory of the trading patterns from the historical prices. Three types of gating units control the stock-trading information entering and leaving a memory cell at each time: the input, forget, and output gates. The gating architecture of the LSTM allows it to achieve a balance between short and long term dependencies over the stock prices in a time series.
 
@@ -42,7 +42,7 @@ Since the SFM is a variant of recurrent neural networks, it can also be trained 
 
 Since both the SFM and the LSTM are variants of recurrent neural networks, they can be used to predict stock prices as shown in the following diagram: 
 
-![price prediction](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/price_prediction.PNG?raw=true)
+![price prediction](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/price_prediction.PNG?raw=true)
 
 The RNN cell in the middle can be either a LSTM cell or a SFM cell. The LSTM-based price prediction model is considered to be the baseline which will be used to compare against the proposed SFM model. For a time series of trading prices 
 ![](https://latex.codecogs.com/gif.latex?%5C%7Bp_t%20%7C%20t%20%3D%201%2C%20...%2C%20T%20%5C%7D) of a stock, we wish to make an n-step prediction for time t+n based on prices up to time t. The prediction can be viewed as a function 
@@ -61,7 +61,7 @@ The datasets corresponding to the paper can be [found here](https://github.com/z
 
 When the authors compared the SFM method with both autoregressive (AR) models and LSTM, they found that the SFM outperforms both the AR and the LSTM models in terms of average square error for 1-step, 3-step and 5-step predictions:
 
-![Model Comparison](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/model_comparison.PNG?raw=true)
+![Model Comparison](https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/model_comparison.PNG?raw=true)
 
 As seen in the table above, the performance of each of the models becomes worse as the prediction step increases, as expected, but the SFM performed the best for all prediction steps. Since LSTM and SFM are trained with the same procedure (the RMSprop optimizer with a fixed learning rate of 0.01), their performance can be directly compared, and we can see that the SFM seems to have a more precise prediction than the LSTM, which only models internal dependencies. The better performance of the SFM is likely due to the fact that SFM filters out irrelevant frequency components and retains relevant components to better predict future trend, preventing states from dominating price predictions by trapping the model into local patterns of price changes.
 
@@ -105,11 +105,11 @@ python build_data.py
 In the test folder, we run `python test.py --step=1`
 The number step we use indicates the n-step prediction model we want to use. The 1, 3, and 5 step predictions are provided in the source code.
 
-<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/test_output.png" width="600" height="200">
+<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/test_output.png?raw=true" width="600" height="200">
 
 Additionally, we can visualize the data by running the command `python test --step=1 --visualization=true`, which produces several graphs:
 
-<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/visualization.png" width="400" height="300">
+<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/visualization.png?raw=true" width="400" height="300">
 Visualization for AAPL data.
 
 These visualizations show the similarity between the true, given data and the prediction model.
@@ -117,7 +117,7 @@ These visualizations show the similarity between the true, given data and the pr
 ### Training
 In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_dim=10 --niter=4000 --learning_rate=0.01`, where `step` refers to the n-step prediction, `hidden_dim` and `freq_dim` refer to the dimensions, and `niter` (num iterations) and `learning_rate` correspond to the specific training parameters.
 
-<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/images/training-final.png" width="600" height="400">
+<img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/training-final.png?raw=true" width="600" height="400">
 
 The epochs shown in this screenshot represent the iterations of training. The output also includes training error, value error, training duration, best iteration and smallest error. These parameters can be altered depending on the desired accuracy of the model.
 
