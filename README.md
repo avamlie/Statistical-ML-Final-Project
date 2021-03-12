@@ -1,7 +1,7 @@
 # Statistical Machine Learning Final Project
 ### Annika Amlie and Robert Peng
 
-Youtube video: https://youtu.be/hGWgIiyeqfI
+Youtube video presentation: https://youtu.be/hGWgIiyeqfI
 
 ## Reference Paper
 
@@ -55,7 +55,7 @@ To learn general trading patterns from the stock market, the prices of multiple 
 
 The data used in the paper and in this project is stock prices retrieved from Yahoo! Finance; in particular, it consists of the daily opening prices of 50 stocks among ten sectors from 2007 to 2016. For each of the sectors, corporations with the top 5 market capitalization are selected. There are 2518 days of historical stock price data. All models are trained using the daily prices consisting of 2014 days from 2007 to 2014, and daily prices during 2015 and 2016 are used to validate and test respectively, both consisting of 252 days. With daily prices corresponding to 50 corporations over a time span of almost 10 years, this should be enough for the models to learn general patterns in the market over time.
 
-The datasets corresponding to the paper can be [found here](https://github.com/z331565360/State-Frequency-Memory-stock-prediction/tree/master/dataset/price_long_50), consisting of 50 CSV files. 
+The datasets corresponding to the paper can be [found here](https://github.com/avamlie/Statistical-ML-Final-Project/tree/main/price_long_50), consisting of 50 CSV files. 
 
 ### Results of Experiments
 
