@@ -113,7 +113,7 @@ Additionally, we can visualize the data by running the command `python test --st
 
 <img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/visualization.png?raw=true" width="400" height="300">
 
-The above image shows the 1-step prediction for the `AAPL` testing data and the actual data. As we can see, the two seem to correspond very closely with each other. In general, the visualizations for the 50 stocks showed that the predictions correspond very closely with the actual data for 1-step predictions. 
+The above plot shows the 1-step prediction for the `AAPL` testing data and the actual data. As we can see, the two seem to correspond very closely with each other. In general, the visualizations for all 50 stocks showed that the predictions correspond very closely with the actual data for 1-step predictions. 
 
 ### Training
 In the training folder, we run `python train.py --step=3 --hidden_dim=50 --freq_dim=10 --niter=4000 --learning_rate=0.01`, where `step` refers to the n-step prediction, `hidden_dim` and `freq_dim` refer to the dimensions, and `niter` (num iterations) and `learning_rate` correspond to the specific training parameters.
