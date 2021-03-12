@@ -1,6 +1,8 @@
 # Statistical Machine Learning Final Project
 ### Annika Amlie and Robert Peng
 
+Youtube video: https://youtu.be/hGWgIiyeqfI
+
 ## Reference Paper
 
 Liheng Zhang, Charu Aggarwal, Guo-Jun Qi, Stock Price Prediction via Discovering Multi-Frequency Trading Patterns,
