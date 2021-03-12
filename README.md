@@ -110,7 +110,7 @@ The number step we use indicates the n-step prediction model we want to use. The
 Additionally, we can visualize the data by running the command `python test --step=1 --visualization=true`, which produces several graphs:
 
 <img src="https://github.com/avamlie/Statistical-ML-Final-Project/blob/main/src/visualization.png?raw=true" width="400" height="300">
-Visualization for AAPL data.
+Visualization for 1-step prediction for the AAPL testing data.
 
 These visualizations show the similarity between the true, given data and the prediction model.
 
